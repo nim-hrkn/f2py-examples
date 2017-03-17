@@ -15,7 +15,8 @@ real(8):: a(n,n)
   !f2py intent(in) fac
   !f2py intent(out) a
 
-call m_ext_init(mode,n)
+call m_ext_allocate(n)
+call m_ext_make_g_v(mode)
 
 a = g_v * fac 
 end subroutine init
