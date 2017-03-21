@@ -83,3 +83,21 @@ subroutine apb_p(p,n,a,b,c)
 end subroutine apb_p
 
 
+subroutine nparraytest(arr,n1,n2,arr2)
+  implicit none
+  integer n1, n2
+  real(8) arr(n1,n2)
+  real(8) arr2(n1,n2)
+!f2py intent(in) n1
+!f2py intent(in) n2
+!f2py intent(in) arr
+!f2py intent(out) arr2
+  integer:: i1,i2
+  write(*,*)'n1,n2=',n1,n2
+  do i2=1,n2
+    do i1=1,n1
+      arr2(i1,i2)= arr(i1,i2)+100.0d0*i1
+    enddo
+  enddo
+end subroutine nparraytest
+

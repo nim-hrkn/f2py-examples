@@ -63,9 +63,27 @@ def test3():
     c1 = mylib.apb_p(p, a1,b1)
     print "c1=",c1
 
+def test4():
+    print 
+    print "subroutine",inspect.currentframe().f_code.co_name
+    print "calling np.array"
+    coords = []
+    n = 5
+    for i in range(n):
+       coords.append( [ float(i), float(i+0.1),float(i+0.2) ] )
+    coords = np.array(coords)
+    print "shape=",coords.shape
+    for i in range(n):
+       print coords[i,0:3]
+     
+    coords2 = mylib.nparraytest(coords)
+
+    for i in range(n):
+       print coords2[i,0:3]
 
 if __name__ == "__main__":
     test1()
     test2()
     test3()
 
+    test4()
