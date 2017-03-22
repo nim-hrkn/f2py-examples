@@ -3,15 +3,10 @@ contains
 
 subroutine vavbmc(n,m,a,b,c)
   implicit none
-  integer n,m
-  real(8) a(n)
-  real(8) b(m)
-  real(8) c(n,m)
-  !f2py intent(in) n
-  !f2py intent(in) m
-  !f2py intent(in) a
-  !f2py intent(in) b
-  !f2py intent(out) c
+  integer,intent(in):: n,m
+  real(8),intent(in):: a(n)
+  real(8),intent(in):: b(m)
+  real(8),intent(out):: c(n,m)
 
   integer:: i,j
 
@@ -31,14 +26,10 @@ end subroutine vavbmc
 
 subroutine apb(n,a,b,c)
   implicit none
-  integer n
-  real(8) a(n,n)
-  real(8) b(n,n)
-  real(8) c(n,n)
-  !f2py intent(in) n
-  !f2py intent(in) a
-  !f2py intent(in) b
-  !f2py intent(out) c
+  integer,intent(in):: n
+  real(8),intent(in):: a(n,n)
+  real(8),intent(in):: b(n,n)
+  real(8),intent(out):: c(n,n)
 
   integer:: i,j
 
@@ -56,16 +47,11 @@ end subroutine apb
 
 subroutine apb_p(p,n,a,b,c)
   implicit none
-  integer n
-  real(8) p
-  real(8) a(n,n)
-  integer b(n,n)
-  real(8) c(n,n)
-  !f2py intent(in) p
-  !f2py intent(in) n
-  !f2py intent(in) a
-  !f2py intent(in) b
-  !f2py intent(out) c
+  integer,intent(in):: n
+  real(8),intent(in):: p
+  real(8),intent(in):: a(n,n)
+  integer,intent(in):: b(n,n)
+  real(8),intent(out):: c(n,n)
 
   integer:: i,j
 
